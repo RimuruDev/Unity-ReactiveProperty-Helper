@@ -18,7 +18,7 @@ public class CurrencyData
 ```
 # Newtonsoft.Json
 
-```
+```csharp
     [Serializable]
     public class CurrencyStorage
     {
