@@ -16,3 +16,14 @@ public class CurrencyData
     }
 }
 ```
+# Newtonsoft.Json
+
+```
+    [Serializable]
+    public class CurrencyStorage
+    {
+        [JsonProperty] public ReactiveProperty<int> SoftCurrency { get; private set; } = new();
+
+        [JsonProperty] public ReactiveProperty<int> HardCurrency { get; private set; } = new();
+    }
+```
