@@ -1,11 +1,16 @@
 using System;
+using UnityEngine;
 
 namespace RimuruDev
 {
     [Serializable]
     public class ReactiveProperty<T>
     {
+#if UNITY_EDITOR
+        [SerializeField]
+#endif
         private T value;
+
         [NonSerialized] private Action<T> onChanged;
 
         public event Action<T> OnChanged
@@ -26,6 +31,11 @@ namespace RimuruDev
                 this.value = value;
                 onChanged?.Invoke(value);
             }
+        }
+
+        public void OnNext(T nextValue)
+        {
+            Value = nextValue;
         }
 
         public ReactiveProperty(T initialValue = default)
