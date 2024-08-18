@@ -1,15 +1,23 @@
+// ********************************************************************
+//
+//   Copyright (c) RimuruDev
+//   Contact information:
+//       Email:    rimuru.dev@gmail.com
+//       GitHub:   https://github.com/RimuruDev
+//       LinkedIn: https://www.linkedin.com/in/rimuru/
+//
+// ********************************************************************
+
 using System;
 using UnityEngine;
 
 namespace RimuruDev
 {
     [Serializable]
+    [HelpURL("https://github.com/RimuruDev/Unity-ReactiveProperty-Helper.git")]
     public class ReactiveProperty<T>
     {
-#if UNITY_EDITOR
-        [SerializeField]
-#endif
-        private T value;
+        [SerializeField] private T value;
 
         [NonSerialized] private Action<T> onChanged;
 
